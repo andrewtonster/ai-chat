@@ -40,9 +40,10 @@ export const Signup = () => {
   */
   React.useEffect(() => {
     if (auth?.user) {
+      console.log("I should navigate to /chat now");
       return navigate("/chat");
     }
-  });
+  }, [auth]);
 
   return (
     <Box width={"100%"} height={"100%"} display="flex" flex={1}>

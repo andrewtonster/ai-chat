@@ -16,10 +16,12 @@ export const signupUser = async (name, email, password) => {
     throw new Error("Failed to login");
   }
   const data = await res.data; // contains data sent back by backend what does res.data actually return
+  console.log(data);
   return data;
 };
 
 export const checkAuthStatus = async () => {
+  console.log("auth status being called");
   const res = await axios.get("/user/auth-status");
   if (res.status !== 200) {
     throw new Error("Failed to Authenticate");

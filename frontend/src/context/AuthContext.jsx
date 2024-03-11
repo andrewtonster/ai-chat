@@ -17,10 +17,18 @@ export const AuthProvider = ({ children }) => {
   // Whenever this component is rendered, use effect will run once
   React.useEffect(() => {
     async function checkStatus() {
-      const data = await checkAuthStatus();
-      if (data) {
-        setUser({ email: data.email, name: data.name });
-        setIsLoggedIn(true);
+      try {
+        console.log("Check status was run");
+        const data = await checkAuthStatus();
+        if (data) {
+          setUser({ email: data.email, name: data.name });
+          setIsLoggedIn(true);
+        }
+      } catch (error) {
+        // Handle the error as needed
+        console.error("Error checking auth status:", error);
+      } finally {
+        // Optional: Perform cleanup or actions that should occur regardless of success or failure
       }
     }
 
@@ -39,6 +47,7 @@ export const AuthProvider = ({ children }) => {
   const signup = async (name, email, password) => {
     const data = await signupUser(name, email, password);
     if (data) {
+      console.log("signup suceess");
       setIsLoggedIn(true);
       setUser({ email: data.email, name: data.name });
     }

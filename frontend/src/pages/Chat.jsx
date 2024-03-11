@@ -13,20 +13,22 @@ import {
 import toast from "react-hot-toast";
 
 export const Chat = () => {
+  console.log("I am in chat now");
   const navigate = useNavigate();
   const inputRef = useRef(null);
   const auth = useAuth();
-
+  console.log(auth?.user);
   // Getting initials for icon
-  const name = auth?.user.name;
-  const name_arr = name.split(" ");
+  // const name = auth?.user.name;
+  // const name_arr = name.split(" ");
 
-  const first_i = name_arr[0][0];
-  const last_i = "";
+  // console.log(name, "I should be rendering");
+  // const first_i = name_arr[0][0];
+  // const last_i = "";
 
-  if (name_arr.length == 2) {
-    name_arr[1][0];
-  }
+  // if (name_arr.length == 2) {
+  //   name_arr[1][0];
+  // }
 
   // holds the chat messages
   const [chatMessages, setChatMessages] = useState([]);
@@ -132,8 +134,8 @@ export const Chat = () => {
               fontWeight: 700,
             }}
           >
-            {first_i}
-            {last_i}
+            {/* {first_i}
+            {last_i} */}
           </Avatar>
           <Typography sx={{ mx: "auto", fontFamily: "work sans" }}>
             Welcome to my ChatBOT!
