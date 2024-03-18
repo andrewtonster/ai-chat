@@ -9,7 +9,7 @@ config();
 // we are creating the express application to use
 const app = express();
 
-app.use(cors({ origin: "http://localhost:5173", credentials: true }));
+app.use(cors({ origin: process.env.ORIGIN, credentials: true }));
 // we are going to use this middleware to send and recieve data as json from the body
 app.use(express.json());
 
