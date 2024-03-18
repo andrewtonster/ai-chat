@@ -9,7 +9,7 @@ import axios from "axios";
 import { Toaster } from "react-hot-toast";
 
 // Define base url for each axios request, with credentials: ensures that cookies are included in requests
-axios.defaults.baseURL = "http://localhost:4000/api/v1";
+axios.defaults.baseURL = import.meta.env.VITE_BASE_URL;
 
 axios.defaults.withCredentials = true;
 
