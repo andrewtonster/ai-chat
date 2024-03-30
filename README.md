@@ -4,7 +4,7 @@ A website with a secure authentication systems which allow user to have their pe
 
 # Technologies
 
-Utalizes React for frontened and MongoDB database for the backend. 
+React, MongoDB, OpenAI, HTML, CSS, Express
 
 # Demo
 
